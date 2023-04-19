@@ -12,12 +12,15 @@ $('#texto').hide();
 
     if(numerito==numeroOk){
         $('#texto').fadeIn();
-        dialog.innerHTML = 'Muy bien, adivinaste el numero que pensé es: '+numeroOk;
+        $('#texto').css('color', '#008f39');
+        dialog.innerHTML = 'Muy bien, adivinaste el numero que pensé es: <strong>'+numeroOk+'</strong>';
     }else{
         $('#texto').fadeIn();
-        dialog.innerHTML = 'erraste, como cuando le regale un peine a mi tio Mati, intenta de nuevo';
+        $('#texto').css('color', '#FF0040');
+        dialog.innerHTML = 'Erraste, como cuando le regale un peine a mi tio Mati, intenta de nuevo';
     }
 }else{
+    $('#texto').css('color', '#FF0040');
     $('#texto').fadeIn();
     dialog.innerHTML = 'Dije del 0 al 10!, sos Ayelen?, intentá de nuevo soquete';
 }
@@ -32,5 +35,6 @@ $('#recargar').click(function() {
 
 $('#trampa').click(function (e) { 
     e.preventDefault();
-    dialog.innerHTML = 'te rendis? mmm flojito/a como mi tio Eber jaja, el numero que pensé es: <strong>'+numeroOk+'</strong>';
+    $('#texto').css('color', '#000000');
+    dialog.innerHTML = 'Te rendis? mmm flojito/a como mi tio Eber jaja, el numero que pensé es: <strong>'+numeroOk+'</strong>';
 });
